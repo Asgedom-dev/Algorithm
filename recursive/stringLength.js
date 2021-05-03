@@ -42,7 +42,7 @@
 //         // console.log(result.charAt(0) + result.charAt(0));
 //         // return 1 + stuuter(result.substring(1));
 //         // to print in one line
-//         return result.charAt(0)+result.charAt(0)+ stuuter(result.substring(1));
+//         return stuuter(result.substring(1));
 //     }
 // }
 // console.log(stuuter(result));
@@ -56,18 +56,40 @@
 //     }
 // }
 // console.log(fac(5));
-console.log(Math.pow(2,7));
-let x = [1, 2, 3, 4, 5];
+// console.log(Math.pow(2,7));
+// let x = [1, 2, 3, 4, 5];
 
-function helperFun(x, i) {
-  if (i < 0) {
-    return 0;
-  } else {
-    return x[i] + helperFun(x, i - 1);
-  }
-}
-function sumofarray(x) {
-  return helperFun(x, x.length - 1);
-}
+// function helperFun(x, i) {
+//   if (i < 0) {
+//     return 0;
+//   } else {
+//     return x[i] + helperFun(x, i - 1);
+//   }
+// }
+// function sumofarray(x) {
+//   return helperFun(x, x.length - 1);
+// }
 
-console.log(sumofarray(x));
+// console.log(sumofarray(x));
+
+//how to find maximum number
+let x = [1,2,3,2,4,5,6,34,34];
+// let max = x[0] ;
+// function maximumNumber(x){
+// for(let i=1; i<x.length; i++){
+//     if(x[i] > max){
+//         max = x[i];
+//     }
+// }return max;
+// }
+// console.log(maximumNumber(x));
+
+function removeDuplicate(x){
+    let y = [];
+    for(let i=0; i<x.length;i++){
+        if(!y.includes(x[i])){
+            y.push(x[i])
+        }
+    }return y;
+}
+console.log(removeDuplicate(x))

@@ -1,20 +1,18 @@
 let x = [1,2,3,4,5,6,7];
-let item = 3;
-function binary(x , item){
-    let up = 0;
-    let lo =x[x.length-1];
-
-    while(lo<=up){
-        mid = (lo + up)/2;
-        let guess = item[mid];
-        if(guess == item){
-            return mid;
-        }if(guess >= item){
-            up = mid-1;
+let item = 7;
+function search(A,x){
+    return binary(A,x,0,A.length-1);
+}
+function binary(A,x ,lower,upper){
+    while(lower<upper){
+        mid = Math.floor((lower + upper)/2);
+        if(lower > upper ){
+            return false;
+        } if(x < A[mid]){
+            return (A,x,lower,mid-1);
         }else{
-            lo = mid + 1;
+            return (A, x, mid + 1, upper);
         }
-    return null;
     }
 }
-console.log(binary(x, item));
+console.log(search(x, item));
